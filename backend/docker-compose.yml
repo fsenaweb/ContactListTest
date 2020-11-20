@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  db:
+    container_name: database
+    image: mysql:5.7
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    networks:
+      - system
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - '8080:80'
+    networks:
+      - system
+  web:
+    build: .
+    container_name: server
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+    networks:
+      - system
+networks:
+  system:
+    driver: bridge
+

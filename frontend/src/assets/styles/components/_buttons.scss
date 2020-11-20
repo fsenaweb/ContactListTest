@@ -1,0 +1,44 @@
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 85px 0 30px;
+}
+
+
+@mixin btn {
+  width: 188px;
+  height: 40px;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 5px;
+  outline: none;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $secondary;
+    color: $primary;
+    transition: 0s
+  }
+
+}
+
+.save {
+  @include btn;
+  background: $confirm;
+  color: $primary;
+  border-radius: 35px;
+}
+
+.cancel {
+  @include btn;
+  background: transparent;
+  color: $secondary;
+  border-radius: 35px;
+}

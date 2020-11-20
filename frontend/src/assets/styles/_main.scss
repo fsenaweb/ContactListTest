@@ -1,0 +1,13 @@
+//
+// Custom components Bootstrap
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import 'base/variables';
+@import 'base/default';
+
+// Custom Components
+@import "components/index";
