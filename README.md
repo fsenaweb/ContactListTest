@@ -3,7 +3,7 @@
 
 ###### Code of integration between Laravel (API) code and Vue.js (CLI) for construction of a simple contact list.
 
-#####Resources:
+##### Resources:
 
 - Laravel
 - Vue
